@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — GeoTrace</title>
+<meta name="description" content="GeoTrace privacy policy: no accounts, no servers, no ads. All GPS and measurement data stays on your device.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='6' fill='%2316241C'/%3E%3Cpath d='M4 20 L9 8 L14 16 L18 6 L22 20' stroke='%235C9169' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='4' cy='20' r='2' fill='%23D68C45'/%3E%3Ccircle cx='22' cy='20' r='2' fill='%23D68C45'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#16241C;
+    --pine-2:#1E3327;
+    --parchment:#F3EFE2;
+    --parchment-dim:#E4DEC8;
+    --field:#5C9169;
+    --stake:#D68C45;
+    --blueprint:#3C6E8F;
+    --ink:#0F1A13;
+    --line:rgba(243,239,226,0.14);
+    --line-soft:rgba(243,239,226,0.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--pine);
+    color:var(--parchment);
+    font-family:'Inter', sans-serif;
+    line-height:1.7;
+    font-size:15.5px;
+  }
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .display{font-family:'Space Grotesk', sans-serif;}
+
+  .topo-bg{
+    position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.3;
+    background-image:
+      repeating-radial-gradient(circle at 12% 15%, transparent 0, transparent 38px, rgba(92,145,105,0.08) 39px, transparent 40px, transparent 78px, rgba(92,145,105,0.08) 79px, transparent 80px),
+      repeating-radial-gradient(circle at 88% 80%, transparent 0, transparent 46px, rgba(60,110,143,0.07) 47px, transparent 48px, transparent 94px, rgba(60,110,143,0.07) 95px, transparent 96px);
+  }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(22,36,28,0.88); backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1040px; margin:0 auto; padding:16px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:18px;}
+  .logo-mark{width:24px; height:24px; flex-shrink:0;}
+  .nav-badge{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--field); border:1px solid rgba(92,145,105,0.4); padding:6px 12px; border-radius:100px;
+    display:flex; align-items:center; gap:7px;
+  }
+  .nav-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--field);}
+  .nav-right{display:flex; align-items:center; gap:14px;}
+
+  .skip-link{
+    position:fixed; top:-60px; left:14px; z-index:100;
+    background:var(--stake); color:var(--ink); font-weight:600; font-size:13px;
+    padding:10px 16px; border-radius:8px; text-decoration:none; transition:top .2s ease;
+  }
+  .skip-link:focus{top:14px;}
+
+  .progress-track{position:fixed; top:0; left:0; right:0; z-index:30; height:2.5px; background:transparent;}
+  .progress-fill{height:100%; width:0%; background:var(--stake); transition:width .08s linear;}
+
+  .wrap{position:relative; z-index:1; max-width:1040px; margin:0 auto; padding:0 28px;}
+
+  /* HERO */
+  .hero{padding:64px 0 40px; max-width:680px;}
+  .hero-eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--stake); margin-bottom:18px; display:flex; align-items:center; gap:8px;
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif; font-weight:700;
+    font-size:clamp(34px, 5vw, 50px); line-height:1.06; letter-spacing:-0.02em; margin-bottom:16px;
+  }
+  h1 em{font-style:normal; color:var(--field);}
+  .hero p{font-size:16.5px; color:var(--parchment-dim); max-width:560px; margin-bottom:22px;}
+  .hero-meta{font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--parchment-dim);}
+  .hero-meta b{color:var(--field); font-weight:500;}
+
+  /* SUMMARY SCORECARD — signature element */
+  .scorecard{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    margin:32px 0 0;
+  }
+  @media(max-width:700px){ .scorecard{grid-template-columns:repeat(2,1fr);} }
+  .score-cell{background:var(--pine-2); padding:20px 18px;}
+  .score-cell .k{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.05em; text-transform:uppercase; color:var(--parchment-dim); margin-bottom:8px;}
+  .score-cell .v{font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:600; color:var(--field);}
+
+  /* LAYOUT */
+  .container{
+    display:grid; grid-template-columns:200px 1fr; gap:44px;
+    padding:44px 0 90px; align-items:start;
+  }
+  @media(max-width:820px){ .container{grid-template-columns:1fr;} }
+
+  .toc{position:sticky; top:76px;}
+  .toc-title{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--parchment-dim); margin-bottom:12px;}
+  .toc a{
+    display:block; color:var(--parchment-dim); text-decoration:none; font-size:13px;
+    padding:7px 0 7px 14px; border-left:1px solid var(--line); transition:all .2s ease;
+  }
+  .toc a:hover{color:var(--stake); border-left-color:var(--stake); padding-left:18px;}
+  .toc a.active{color:var(--field); border-left-color:var(--field); font-weight:500; padding-left:18px;}
+  @media(max-width:820px){ .toc{display:none;} }
+
+  .back-to-top{
+    position:fixed; bottom:26px; right:26px; z-index:25;
+    width:44px; height:44px; border-radius:50%; background:var(--stake); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    box-shadow:0 8px 24px -6px rgba(0,0,0,0.45);
+    opacity:0; transform:translateY(10px); pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .back-to-top.visible{opacity:1; transform:translateY(0); pointer-events:auto;}
+  .back-to-top:hover{transform:translateY(-3px);}
+
+  .copy-btn{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--parchment-dim);
+    background:rgba(243,239,226,0.06); border:1px solid var(--line); border-radius:6px;
+    padding:4px 9px; cursor:pointer; margin-left:10px; transition:all .15s ease;
+  }
+  .copy-btn:hover{color:var(--field); border-color:rgba(92,145,105,0.4);}
+  .copy-btn.copied{color:var(--field); border-color:var(--field);}
+
+  .content{display:flex; flex-direction:column; gap:14px;}
+
+  .section{
+    background:var(--pine-2); border:1px solid var(--line); border-radius:16px; padding:32px 34px;
+    scroll-margin-top:84px; transition:border-color .25s ease;
+  }
+  .section:hover{border-color:rgba(92,145,105,0.45);}
+  .section-header{
+    display:flex; align-items:center; gap:14px; margin-bottom:18px; padding-bottom:16px;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .section-num{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--field);
+    border:1px solid rgba(92,145,105,0.4); border-radius:50%; width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .section h2{font-family:'Space Grotesk',sans-serif; font-size:19px; font-weight:600; letter-spacing:-0.01em;}
+  .section p{color:var(--parchment-dim); font-size:15px; margin-bottom:13px;}
+  .section p:last-child{margin-bottom:0;}
+  .section strong{color:var(--parchment); font-weight:600;}
+
+  .highlight{
+    background:rgba(92,145,105,0.09); border:1px solid rgba(92,145,105,0.3); border-radius:10px;
+    padding:14px 18px; margin:16px 0; font-size:14px; color:var(--parchment-dim);
+    display:flex; gap:10px; align-items:flex-start;
+  }
+  .highlight b{color:var(--field);}
+
+  .policy-list{list-style:none; display:flex; flex-direction:column; gap:10px; margin:14px 0;}
+  .policy-list li{display:flex; align-items:flex-start; gap:10px; color:var(--parchment-dim); font-size:14.5px;}
+  .policy-list li::before{
+    content:"✓"; color:var(--field); font-size:11px; font-weight:700; flex-shrink:0; margin-top:3px;
+    width:16px; height:16px; background:rgba(92,145,105,0.15); border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* Data ledger table */
+  table.ledger{width:100%; border-collapse:collapse; margin:16px 0; font-size:13.5px;}
+  table.ledger th{
+    text-align:left; padding:9px 12px; font-family:'JetBrains Mono',monospace; font-size:10.5px;
+    letter-spacing:0.05em; text-transform:uppercase; color:var(--stake); border-bottom:1px solid var(--line);
+  }
+  table.ledger td{
+    padding:11px 12px; color:var(--parchment-dim); border-bottom:1px solid var(--line-soft); vertical-align:top;
+  }
+  table.ledger tr:last-child td{border-bottom:none;}
+  table.ledger strong{color:var(--parchment);}
+  .tag{
+    font-family:'JetBrains Mono',monospace; font-size:11px; border-radius:6px; padding:3px 9px;
+    white-space:nowrap; display:inline-block;
+  }
+  .tag-never{background:rgba(92,145,105,0.16); color:var(--field);}
+  .tag-local{background:rgba(214,140,69,0.16); color:var(--stake);}
+
+  .contact-card{
+    background:rgba(0,0,0,0.15); border:1px solid rgba(92,145,105,0.35); border-radius:12px;
+    padding:20px 22px; display:flex; align-items:center; gap:16px; margin-top:16px;
+  }
+  .contact-icon{
+    width:42px; height:42px; background:rgba(92,145,105,0.15); border-radius:10px;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-card a{color:var(--field); text-decoration:none; font-size:14.5px; font-weight:600; font-family:'JetBrains Mono',monospace;}
+  .contact-card a:hover{text-decoration:underline;}
+  .contact-card p{color:var(--parchment-dim); font-size:13px; margin:2px 0 0 !important;}
+
+  footer{border-top:1px solid var(--line); padding:30px 0; text-align:center; font-size:13px; color:var(--parchment-dim);}
+  footer .field{color:var(--field);}
+
+  ::selection{background:var(--field); color:var(--ink);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--stake); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important;} }
+
+  /* reveal-on-scroll */
+  .section{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease, border-color .25s ease;}
+  .section.in-view{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ .section{opacity:1; transform:none;} }
+
+  /* Mobile: tables become stacked label/value cards */
+  @media(max-width:600px){
+    table.ledger, table.ledger thead, table.ledger tbody, table.ledger tr, table.ledger td{display:block;}
+    table.ledger thead{display:none;}
+    table.ledger tr{
+      border:1px solid var(--line-soft); border-radius:10px; padding:12px 14px; margin-bottom:10px;
+    }
+    table.ledger td{border-bottom:none; padding:5px 0;}
+    table.ledger td::before{
+      content:attr(data-label); display:block; font-family:'JetBrains Mono',monospace;
+      font-size:10px; letter-spacing:0.05em; text-transform:uppercase; color:var(--stake); margin-bottom:3px;
+    }
+    .section{padding:26px 22px;}
+  }
+
+  @media print{
+    body{background:#fff; color:#111;}
+    .topo-bg, nav, .toc, .back-to-top, .progress-track, .skip-link{display:none !important;}
+    .section{background:#fff; border:1px solid #ccc; opacity:1 !important; transform:none !important; break-inside:avoid;}
+    .hero, .container{padding:0;}
+    a{color:#111; text-decoration:underline;}
+  }
+</style>
+</head>
+<body id="top">
+
+<div class="topo-bg"></div>
+
+<a class="skip-link" href="#overview">Skip to policy content</a>
+
+<div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+        <path d="M4 20 L9 8 L14 16 L18 6 L22 20" stroke="#5C9169" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="4" cy="20" r="2" fill="#D68C45"/>
+        <circle cx="22" cy="20" r="2" fill="#D68C45"/>
+      </svg>
+      GeoTrace
+    </div>
+    <div class="nav-right">
+      <span class="nav-badge"><span class="dot"></span>Privacy Policy</span>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="hero-eyebrow">🔒 Your privacy matters</div>
+    <h1>We protect<br><em>your data</em>.</h1>
+    <p>GeoTrace is built with privacy first. We collect only what's needed to measure land — nothing more.</p>
+    <div class="hero-meta">Last updated: <b>January 1, 2025</b> &nbsp;·&nbsp; Effective immediately</div>
+
+    <div class="scorecard">
+      <div class="score-cell"><div class="k">Account required</div><div class="v mono">None</div></div>
+      <div class="score-cell"><div class="k">Data sent to servers</div><div class="v mono">Zero</div></div>
+      <div class="score-cell"><div class="k">Ads in app</div><div class="v mono">None</div></div>
+      <div class="score-cell"><div class="k">Your data lives</div><div class="v mono">On device</div></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <a href="#overview">Overview</a>
+      <a href="#data">Data we collect</a>
+      <a href="#location">Location data</a>
+      <a href="#permissions">App permissions</a>
+      <a href="#storage">Data storage</a>
+      <a href="#third-party">Third parties</a>
+      <a href="#children">Children</a>
+      <a href="#changes">Policy changes</a>
+      <a href="#contact">Contact us</a>
+    </nav>
+
+    <div class="content">
+
+      <div class="section" id="overview">
+        <div class="section-header"><div class="section-num mono">01</div><h2>Overview</h2></div>
+        <p>GeoTrace ("we", "us", or "our") is a GPS-based land measurement application. This Privacy Policy explains how we handle information when you use our mobile application.</p>
+        <div class="highlight"><span>✅</span><span><b>Short version:</b> GeoTrace does not collect, store, or share any personal information. All data stays on your device. We do not require account creation or login.</span></div>
+        <p>By using GeoTrace, you agree to the practices described in this policy. If you do not agree, please discontinue use of the app.</p>
+      </div>
+
+      <div class="section" id="data">
+        <div class="section-header"><div class="section-num mono">02</div><h2>Data We Collect</h2></div>
+        <p>GeoTrace is designed to work without collecting personal information. Here is a full breakdown of data handling:</p>
+        <table class="ledger">
+          <thead><tr><th>Data type</th><th>Collected?</th><th>Where stored</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Data type">Name / Email / Account</td><td data-label="Collected?"><span class="tag tag-never">Never</span></td><td data-label="Where stored">—</td></tr>
+            <tr><td data-label="Data type">GPS coordinates</td><td data-label="Collected?"><span class="tag tag-local">Device only</span></td><td data-label="Where stored">Local storage only</td></tr>
+            <tr><td data-label="Data type">Measurements & projects</td><td data-label="Collected?"><span class="tag tag-local">Device only</span></td><td data-label="Where stored">Local storage only</td></tr>
+            <tr><td data-label="Data type">Exported PDF reports</td><td data-label="Collected?"><span class="tag tag-local">Device only</span></td><td data-label="Where stored">Your device storage</td></tr>
+            <tr><td data-label="Data type">Usage / analytics data</td><td data-label="Collected?"><span class="tag tag-never">Never</span></td><td data-label="Where stored">—</td></tr>
+            <tr><td data-label="Data type">Device identifiers</td><td data-label="Collected?"><span class="tag tag-never">Never</span></td><td data-label="Where stored">—</td></tr>
+            <tr><td data-label="Data type">Payment information</td><td data-label="Collected?"><span class="tag tag-never">Never</span></td><td data-label="Where stored">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section" id="location">
+        <div class="section-header"><div class="section-num mono">03</div><h2>Location Data</h2></div>
+        <p>GeoTrace uses your device's GPS to provide land measurement functionality. Location access is the core feature of the app.</p>
+        <ul class="policy-list">
+          <li>Location is accessed <strong>only while you are actively using the app</strong></li>
+          <li>GPS coordinates are used solely to place measurement points on the map</li>
+          <li>Your location data is <strong>never transmitted to any server</strong></li>
+          <li>Your location data is <strong>never shared with third parties</strong></li>
+          <li>Saved measurement coordinates are stored <strong>only on your device</strong></li>
+          <li>You can revoke location permission at any time in your device settings</li>
+        </ul>
+        <div class="highlight"><span>📡</span><span>GeoTrace works fully offline. When measuring in offline mode, GPS coordinates are used locally and no internet connection is required or used.</span></div>
+      </div>
+
+      <div class="section" id="permissions">
+        <div class="section-header"><div class="section-num mono">04</div><h2>App Permissions</h2></div>
+        <p>GeoTrace requests the following Android permissions:</p>
+        <table class="ledger">
+          <thead><tr><th>Permission</th><th>Purpose</th><th>Required?</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Permission"><strong>ACCESS_FINE_LOCATION</strong></td><td data-label="Purpose">GPS-based land measurement</td><td data-label="Required?">Yes — core feature</td></tr>
+            <tr><td data-label="Permission"><strong>ACCESS_COARSE_LOCATION</strong></td><td data-label="Purpose">Network-based position fallback</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>WRITE_EXTERNAL_STORAGE</strong></td><td data-label="Purpose">Save exported PDF reports</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>INTERNET</strong></td><td data-label="Purpose">Load online map tiles only</td><td data-label="Required?">Optional (offline works without)</td></tr>
+          </tbody>
+        </table>
+        <p>You may deny optional permissions. The core measurement functionality remains available with only location permission granted.</p>
+      </div>
+
+      <div class="section" id="storage">
+        <div class="section-header"><div class="section-num mono">05</div><h2>Data Storage & Security</h2></div>
+        <p>All data generated within GeoTrace — measurements, project names, GPS points, and exported files — is stored exclusively on your device using Android's local storage system.</p>
+        <ul class="policy-list">
+          <li>No data is uploaded to any cloud server</li>
+          <li>No remote database or backend server exists</li>
+          <li>Deleting the app removes all associated data from your device</li>
+          <li>We have no ability to access your data remotely</li>
+          <li>We recommend enabling device-level encryption for best security</li>
+        </ul>
+      </div>
+
+      <div class="section" id="third-party">
+        <div class="section-header"><div class="section-num mono">06</div><h2>Third-Party Services</h2></div>
+        <p>GeoTrace uses the following third-party services only for map tile display:</p>
+        <ul class="policy-list">
+          <li><strong>Google Maps / OpenStreetMap</strong> — Map tile imagery (when online). These services may collect standard request logs per their own privacy policies.</li>
+          <li><strong>Google Play Services</strong> — Required for Android device GPS functionality.</li>
+        </ul>
+        <p>We do not use any advertising SDKs, analytics platforms, crash reporting services, or social media integrations. <strong>GeoTrace contains no advertisements.</strong></p>
+      </div>
+
+      <div class="section" id="children">
+        <div class="section-header"><div class="section-num mono">07</div><h2>Children's Privacy</h2></div>
+        <p>GeoTrace does not knowingly collect any personal information from children under the age of 13. Since we collect no personal information from any user, the app is safe for general use. If you believe a child has provided personal information, please contact us and we will address it promptly.</p>
+      </div>
+
+      <div class="section" id="changes">
+        <div class="section-header"><div class="section-num mono">08</div><h2>Changes to This Policy</h2></div>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to review this policy periodically. Continued use of the app after changes constitutes your acceptance of the updated policy.</p>
+        <p>Significant changes will be communicated through an in-app notification.</p>
+      </div>
+
+      <div class="section" id="contact">
+        <div class="section-header"><div class="section-num mono">09</div><h2>Contact Us</h2></div>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the app's data practices, please reach out:</p>
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <div>
+            <a href="mailto:geomeasuregpsareacalculator@gmail.com" id="emailLink">geomeasuregpsareacalculator@gmail.com</a><button class="copy-btn" id="copyBtn" type="button" aria-label="Copy email address">Copy</button>
+            <p>We aim to respond to all privacy inquiries within 48 hours.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© 2025 <span class="field">GeoTrace</span> · Land Measurement App · All rights reserved</div>
+  <div class="wrap" style="margin-top:6px;">This policy is effective as of January 1, 2025</div>
+</footer>
+
+<a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="#0F1A13" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+
+<script>
+  // Reading progress bar
+  const progressFill = document.getElementById('progressFill');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = h.scrollTop;
+    const max = h.scrollHeight - h.clientHeight;
+    progressFill.style.width = max > 0 ? (scrolled/max*100) + '%' : '0%';
+  }
+  document.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
+
+  // Back-to-top visibility
+  const backToTop = document.getElementById('backToTop');
+  function updateBackToTop(){
+    backToTop.classList.toggle('visible', window.scrollY > 480);
+  }
+  document.addEventListener('scroll', updateBackToTop, {passive:true});
+  updateBackToTop();
+
+  // Active TOC highlighting via IntersectionObserver
+  const tocLinks = Array.from(document.querySelectorAll('.toc a'));
+  const sections = tocLinks.map(a => document.querySelector(a.getAttribute('href')));
+  if('IntersectionObserver' in window){
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        const link = tocLinks[sections.indexOf(entry.target)];
+        if(!link) return;
+        if(entry.isIntersecting){
+          tocLinks.forEach(l=>l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+    sections.forEach(s => { if(s) observer.observe(s); });
+
+    // Reveal-on-scroll for section cards
+    const revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12});
+    document.querySelectorAll('.section').forEach(s => revealObserver.observe(s));
+
+    // Safety: if a TOC/anchor link is clicked, immediately reveal the target
+    // so a fast jump-scroll never lands on a still-invisible section.
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', ()=>{
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) target.classList.add('in-view');
+      });
+    });
+  } else {
+    document.querySelectorAll('.section').forEach(s => s.classList.add('in-view'));
+  }
+
+  // Copy email button
+  const copyBtn = document.getElementById('copyBtn');
+  const emailLink = document.getElementById('emailLink');
+  copyBtn.addEventListener('click', async ()=>{
+    const email = emailLink.textContent.trim();
+    try{
+      await navigator.clipboard.writeText(email);
+    }catch(e){
+      const ta = document.createElement('textarea');
+      ta.value = email; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    copyBtn.textContent = 'Copied';
+    copyBtn.classList.add('copied');
+    setTimeout(()=>{ copyBtn.textContent = 'Copy'; copyBtn.classList.remove('copied'); }, 1800);
+  });
+</script>
+
+</body>
+</html>
