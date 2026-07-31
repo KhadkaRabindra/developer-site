@@ -1,163 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Delete Account – GeoTrace: Area & Land Measure</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 680px;
-      margin: 40px auto;
-      padding: 0 24px 60px;
-      color: #333;
-      line-height: 1.7;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 32px;
-      border-bottom: 2px solid #1a73e8;
-      padding-bottom: 16px;
-    }
-    .header h1 {
-      font-size: 1.4em;
-      color: #1a73e8;
-    }
-    h2 {
-      margin-top: 32px;
-      margin-bottom: 10px;
-      color: #1a73e8;
-      font-size: 1.1em;
-    }
-    p { margin-bottom: 10px; }
-    ul, ol { padding-left: 20px; margin-bottom: 10px; }
-    ul li, ol li { margin-bottom: 8px; }
-    .email-box {
-      background: #e8f0fe;
-      border-left: 4px solid #1a73e8;
-      padding: 16px 20px;
-      border-radius: 8px;
-      margin: 20px 0;
-    }
-    .email-box a {
-      color: #1a73e8;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .email-box a:hover { text-decoration: underline; }
-    .tag {
-      display: inline-block;
-      background: #1a73e8;
-      color: white;
-      padding: 2px 10px;
-      border-radius: 12px;
-      font-size: 0.85em;
-      margin-left: 6px;
-    }
-    .note {
-      background: #f1f3f4;
-      padding: 14px 18px;
-      border-radius: 8px;
-      font-size: 0.9em;
-      margin-top: 32px;
-    }
-    .deleted { color: #d93025; font-weight: bold; }
-    .retained { color: #188038; font-weight: bold; }
-    footer {
-      margin-top: 48px;
-      font-size: 0.8em;
-      color: #999;
-      text-align: center;
-      border-top: 1px solid #eee;
-      padding-top: 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delete Account – GPS Land & Acreage Calculator</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #222;
+  }
+  h1 { font-size: 1.6em; margin-bottom: 0.2em; }
+  h2 { font-size: 1.2em; margin-top: 1.8em; }
+  .subtitle { color: #555; margin-bottom: 1.5em; }
+  a { color: #1a73e8; }
+  footer { margin-top: 3em; font-size: 0.85em; color: #777; }
+  code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+</style>
 </head>
 <body>
 
-  <div class="header">
-    <div>
-      <h1>GeoTrace: Area & Land Measure</h1>
-      <p style="font-size:0.9em; color:#666;">Account Deletion Request</p>
-    </div>
-  </div>
+<h1>GPS Land & Acreage Calculator</h1>
+<p class="subtitle">Developed by Vireo Innovations · Account Deletion Request</p>
 
-  <p>
-    We respect your right to privacy. If you would like to delete your
-    GeoTrace account and all associated personal data, please follow
-    the steps below.
-  </p>
+<p>We respect your right to privacy. If you would like to delete your GPS Land &amp; Acreage Calculator account and all associated personal data, please follow the steps below.</p>
 
-  <h2>📧 How to Request Account Deletion</h2>
-  <p>Send an email to our support team with the following details:</p>
+<h2>📧 How to Request Account Deletion</h2>
+<p>Send an email to our support team with the following details:</p>
+<p>📩 Email us at: <a href="mailto:geomeasuregpsareacalculator@gmail.com">geomeasuregpsareacalculator@gmail.com</a></p>
+<p>Please include the following in your email:</p>
+<ul>
+  <li><strong>Subject line:</strong> <code>Account Deletion Request – GPS Land & Acreage Calculator</code></li>
+  <li>The <strong>email address</strong> linked to your account</li>
+  <li>Your <strong>Google account name</strong> used to sign in (if applicable)</li>
+</ul>
 
-  <div class="email-box">
-    <p>📩 Email us at:</p>
-    <p style="font-size:1.1em; margin-top:6px;">
-      <a href="mailto:geomeasuregpsareacalculator@gmail.com">
-        geomeasuregpsareacalculator@gmail.com
-      </a>
-    </p>
-  </div>
+<h2>⏱ Processing Time</h2>
+<p>We will process your deletion request within <strong>30 days</strong> of receiving your email. You will receive a confirmation email once your account has been deleted.</p>
 
-  <p>Please include the following in your email:</p>
-  <ul>
-    <li>
-      <strong>Subject line:</strong>
-      <code>Account Deletion Request – GeoTrace</code>
-    </li>
-    <li>The <strong>email address</strong> linked to your GeoTrace account</li>
-    <li>Your <strong>Google account name</strong> used to sign in (if applicable)</li>
-  </ul>
+<h2>🗑 What Data Will Be Deleted</h2>
+<ul>
+  <li>Deleted — Firebase authentication account</li>
+  <li>Deleted — All saved measurements, projects, and area records</li>
+  <li>Deleted — Your Firestore profile and personal user data</li>
+  <li>Deleted — Push notification tokens (Firebase Messaging)</li>
+</ul>
 
-  <h2>⏱ Processing Time</h2>
-  <p>
-    We will process your deletion request within <strong>30 days</strong>
-    of receiving your email. You will receive a confirmation email once
-    your account has been deleted.
-  </p>
+<h2>📦 What Data Is Retained</h2>
+<ul>
+  <li>Retained — Purchase records are retained by Google Play in accordance with their own privacy policy</li>
+  <li>Retained — Anonymized, non-identifiable analytics data that cannot be linked back to you</li>
+</ul>
 
-  <h2>🗑 What Data Will Be Deleted</h2>
-  <ul>
-    <li><span class="deleted">Deleted</span> — Firebase authentication account</li>
-    <li><span class="deleted">Deleted</span> — All saved measurements, projects, and area records</li>
-    <li><span class="deleted">Deleted</span> — Your Firestore profile and personal user data</li>
-    <li><span class="deleted">Deleted</span> — Push notification tokens (Firebase Messaging)</li>
-  </ul>
+<h2>🔒 Data Retention Period</h2>
+<p>All personal data will be permanently and irreversibly deleted within <strong>30 days</strong> of your verified deletion request. Anonymized data may be retained indefinitely as it cannot identify you.</p>
 
-  <h2>📦 What Data Is Retained</h2>
-  <ul>
-    <li>
-      <span class="retained">Retained</span> — Purchase records are retained by
-      <strong>Google Play</strong> in accordance with their own privacy policy
-    </li>
-    <li>
-      <span class="retained">Retained</span> — Anonymized, non-identifiable
-      analytics data that cannot be linked back to you
-    </li>
-  </ul>
+<h2>💬 Questions?</h2>
+<p>If you have any concerns about your data or this process, contact us at: <a href="mailto:geomeasuregpsareacalculator@gmail.com">geomeasuregpsareacalculator@gmail.com</a></p>
 
-  <h2>🔒 Data Retention Period</h2>
-  <p>
-    All personal data will be permanently and irreversibly deleted within
-    <strong>30 days</strong> of your verified deletion request.
-    Anonymized data may be retained indefinitely as it cannot identify you.
-  </p>
-
-  <div class="note">
-    💬 <strong>Questions?</strong> If you have any concerns about your data
-    or this process, contact us at:
-    <a href="mailto:geomeasuregpsareacalculator@gmail.com">
-      geomeasuregpsareacalculator@gmail.com
-    </a>
-  </div>
-
-  <footer>
-    &copy; 2026 GeoTrace: Area & Land Measure. All rights reserved.
-  </footer>
+<footer>
+  © 2026 GPS Land & Acreage Calculator, developed by Vireo Innovations. All rights reserved.<br>
+  Package: com.geotrace.app
+</footer>
 
 </body>
 </html>
