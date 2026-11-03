@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — GeoTrace</title>
-<meta name="description" content="GeoTrace privacy policy: what we collect, why, and how it's used — including cloud sync, analytics, crash reporting, ads, and in-app purchases.">
+<meta name="description" content="GeoTrace privacy policy: what we collect, why, and how it's used — including Land Reports, online map layers, cloud sync, analytics, crash reporting, ads, and in-app purchases.">
 <meta name="color-scheme" content="dark">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='6' fill='%2316241C'/%3E%3Cpath d='M4 20 L9 8 L14 16 L18 6 L22 20' stroke='%235C9169' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='4' cy='20' r='2' fill='%23D68C45'/%3E%3Ccircle cx='22' cy='20' r='2' fill='%23D68C45'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -286,12 +286,12 @@
   <div class="hero">
     <div class="hero-eyebrow">🔒 Your privacy, surveyed plainly</div>
     <h1>What we collect,<br><em>plainly stated</em>.</h1>
-    <p>GeoTrace is a GPS land-measurement app. Your measurements and GPS points stay on your device by default — but the app also uses Google services for analytics, crash reporting, ads, and optional in-app purchases, and offers cloud sync for GeoTrace Pro subscribers. This page tells you exactly what each one does.</p>
-    <div class="hero-meta">Last updated <b>August 7, 2026</b><span class="sep">·</span>Effective immediately</div>
+    <p>GeoTrace is a GPS land-measurement app. Your saved measurements are stored on your device, but some features send location data off it: Land Reports, online map layers, place search, elevation profiles, shared projects, and cloud sync for GeoTrace Pro. The app also uses Google services for analytics, crash reporting, ads, and in-app purchases. This page tells you exactly what each one does.</p>
+    <div class="hero-meta">Last updated <b>November 3, 2026</b><span class="sep">·</span>Effective immediately</div>
 
     <div class="scorecard">
       <div class="score-cell"><div class="k">Account required</div><div class="v">No — optional</div></div>
-      <div class="score-cell"><div class="k">Your measurements</div><div class="v">On-device (cloud sync for Pro)</div></div>
+      <div class="score-cell"><div class="k">Your measurements</div><div class="v warn">On-device, sent when you use online features</div></div>
       <div class="score-cell"><div class="k">Ads in app</div><div class="v warn">Yes — Google AdMob</div></div>
       <div class="score-cell"><div class="k">Analytics & crash data</div><div class="v warn">Yes — Firebase</div></div>
     </div>
@@ -303,11 +303,13 @@
       <a href="#overview">Overview</a>
       <a href="#data">Data we collect</a>
       <a href="#location">Location data</a>
+      <a href="#land-report">Land Reports & online features</a>
       <a href="#analytics">Analytics & crash reporting</a>
       <a href="#ads">Advertising</a>
       <a href="#accounts">Accounts & cloud sync</a>
       <a href="#purchases">In-app purchases</a>
       <a href="#camera">Camera & photos</a>
+      <a href="#shared">Shared projects & friends</a>
       <a href="#notifications">Push notifications</a>
       <a href="#permissions">App permissions</a>
       <a href="#storage">Data storage & retention</a>
@@ -322,9 +324,9 @@
 
       <div class="section" id="overview">
         <div class="section-header"><div class="section-num mono">01</div><h2>Overview</h2></div>
-        <p>GeoTrace ("we", "us", or "our") is a GPS-based land measurement application. This Privacy Policy explains what information the app and its third-party service providers collect, why, and what choices you have.</p>
-        <div class="highlight"><span>✅</span><span><b>What stays local:</b> your GPS measurement points, saved projects, and exported reports are stored only on your device unless you sign in <strong>and</strong> subscribe to or purchase GeoTrace Pro, which enables cloud sync.</span></div>
-        <div class="warn-box"><span>⚠️</span><span><b>What isn't local:</b> GeoTrace uses Google Firebase (Authentication, Firestore, Analytics, Crashlytics, Performance Monitoring, Cloud Messaging), Google AdMob, and Google Play Billing. Each of these transmits certain data to Google's servers — or, in Firestore's case, to our own database — described below.</span></div>
+        <p>GeoTrace is a GPS-based land measurement application developed by <strong>Vireo Innovations</strong> ("we", "us", or "our"), which is responsible for your personal data under this policy. This Privacy Policy explains what information the app and its third-party service providers collect, why, and what choices you have.</p>
+        <div class="highlight"><span>✅</span><span><b>What stays local:</b> your saved measurements, projects, and exported files are kept on your device. They are copied to our servers only if you sign in with GeoTrace Pro cloud sync, or add them to a shared project.</span></div>
+        <div class="warn-box"><span>⚠️</span><span><b>What isn't local:</b> when you generate a Land Report, turn on a map layer, search for a place, or use another online feature, the location involved is sent to our servers or to the map and data providers named below. GeoTrace also uses Google Firebase, Google AdMob, and Google Play Billing, which transmit certain data to Google's servers or to our own database.</span></div>
         <p>By using GeoTrace, you agree to the practices described in this policy. If you do not agree, please discontinue use of the app.</p>
       </div>
 
@@ -335,53 +337,88 @@
         <table class="ledger">
           <thead><tr><th>Data type</th><th>Collected?</th><th>Where it goes</th></tr></thead>
           <tbody>
-            <tr><td data-label="Data type">GPS coordinates / measurements</td><td data-label="Collected?"><span class="tag tag-shared">If Pro + signed in</span></td><td data-label="Where it goes">Local storage always; additionally synced to Google Firestore if you're signed in and subscribed to or purchased Pro</td></tr>
+            <tr><td data-label="Data type">Saved measurements and GPS points</td><td data-label="Collected?"><span class="tag tag-shared">If you sync or share</span></td><td data-label="Where it goes">Local storage always; also stored in Google Firestore if you use Pro cloud sync or add them to a shared project</td></tr>
+            <tr><td data-label="Data type">Location of a plot or line you use with an online feature</td><td data-label="Collected?"><span class="tag tag-shared">When you use it</span></td><td data-label="Where it goes">Our servers (Google Cloud) and the providers listed under Land Reports & Online Features</td></tr>
+            <tr><td data-label="Data type">Map area on screen, while an online map layer is on</td><td data-label="Collected?"><span class="tag tag-shared">When a layer is on</span></td><td data-label="Where it goes">The government or commercial map service providing that layer</td></tr>
+            <tr><td data-label="Data type">Text you type into place search</td><td data-label="Collected?"><span class="tag tag-shared">When you search</span></td><td data-label="Where it goes">Google geocoding and place services</td></tr>
+            <tr><td data-label="Data type">Land Reports you generate</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Local storage; also stored against your account in Google Firestore if you're signed in</td></tr>
             <tr><td data-label="Data type">Name / Email / User ID</td><td data-label="Collected?"><span class="tag tag-shared">If you sign in</span></td><td data-label="Where it goes">Firebase Authentication (Google), and stored in our Google Firestore database to identify your account and for support</td></tr>
-            <tr><td data-label="Data type">App usage / interaction events</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase Analytics (Google)</td></tr>
+            <tr><td data-label="Data type">App usage / interaction events</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase Analytics (Google), and an event log in our Google Firestore database linked to your user ID, and to your email if you're signed in</td></tr>
+            <tr><td data-label="Data type">App warnings and errors</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Our Google Firestore database, linked to your user ID, with app version and device model</td></tr>
             <tr><td data-label="Data type">Crash logs & diagnostics</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase Crashlytics (Google)</td></tr>
             <tr><td data-label="Data type">App performance metrics</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase Performance Monitoring (Google)</td></tr>
             <tr><td data-label="Data type">Advertising ID & ad interaction data</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Google AdMob & its ad partners</td></tr>
             <tr><td data-label="Data type">Purchase history / transaction ID</td><td data-label="Collected?"><span class="tag tag-shared">If you buy something</span></td><td data-label="Where it goes">Google Play Billing</td></tr>
             <tr><td data-label="Data type">Push notification token</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase Cloud Messaging (Google), and stored in our Google Firestore database against your device/account record</td></tr>
-            <tr><td data-label="Data type">Photos taken in-app</td><td data-label="Collected?"><span class="tag tag-local">Device only</span></td><td data-label="Where it goes">Local storage, unless attached to a synced project</td></tr>
-            <tr><td data-label="Data type">Device identifiers, model, OS version, subscription tier, install/last-active dates</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase & AdMob for diagnostics/ad delivery, and our own Google Firestore database for app health monitoring and support</td></tr>
+            <tr><td data-label="Data type">Plot photos and marked points</td><td data-label="Collected?"><span class="tag tag-shared">If you sync or share</span></td><td data-label="Where it goes">Local storage; also uploaded to Google Firestore and Cloud Storage if the plot is synced or in a shared project</td></tr>
+            <tr><td data-label="Data type">Device ID (Android ID), automatic anonymous user ID, model, OS version, app language, country, subscription tier, install source, measurement count, install/last-active dates</td><td data-label="Collected?"><span class="tag tag-shared">Yes</span></td><td data-label="Where it goes">Firebase & AdMob for diagnostics/ad delivery, and our own Google Firestore database for app health monitoring and support</td></tr>
           </tbody>
         </table>
         </div>
-        <p>Rows marked <span class="tag tag-local">Device only</span> never leave your phone under normal use. Rows marked <span class="tag tag-shared">Shared</span> are transmitted to the named Google service — or, where noted, to our own Firestore database — as part of that feature working.</p>
+        <p>Each row is transmitted to the named service, or to our own Firestore database, in the situation shown, as part of that feature working.</p>
       </div>
 
       <div class="section" id="location">
         <div class="section-header"><div class="section-num mono">03</div><h2>Location Data</h2></div>
         <p>GeoTrace uses your device's GPS to provide land measurement functionality. Location access is the core feature of the app.</p>
         <ul class="policy-list">
-          <li>Location is accessed only while you are actively using the app</li>
+          <li>Location is accessed while you are using the app. If you start recording a walk, it continues with the screen off, with a visible notification, until you stop it. GeoTrace does not request Android's background location permission</li>
           <li>GPS coordinates are used to place measurement points on the map and calculate area/distance</li>
-          <li>Saved measurement coordinates are stored on your device always. If you sign in <strong>and</strong> subscribe to or purchase Pro, your projects and measurements — including GPS coordinates — are additionally synced to our Google Firestore database, so they're available across your devices</li>
+          <li>Saved measurement coordinates are stored on your device always. If you sign in with Pro cloud sync, or add a plot to a shared project, they are also stored in our Google Firestore database</li>
+          <li>Online features send location data off your device when you use them, as described in the next section</li>
           <li>Approximate location (derived from network/IP) may be used by Google Play Services and AdMob for service delivery and ad relevance, independent of the app's own GPS use</li>
           <li>You can revoke location permission at any time in your device settings</li>
         </ul>
-        <div class="highlight"><span>ℹ️</span><span>Cloud sync is available now as part of GeoTrace Pro. If you never sign in, or sign in without Pro, your GPS coordinates stay device-only as described above.</span></div>
+        </div>
+
+      <div class="section" id="land-report">
+        <div class="section-header"><div class="section-num mono">04</div><h2>Land Reports & Online Features</h2></div>
+        <p>These features only work by sending a location off your device. Nothing is sent until you use the feature. We don't include your name, email, or account ID in requests to the outside providers below, though a service your phone contacts directly can see your IP address.</p>
+        <h3>Land Report</h3>
+        <p>When you generate a report, the plot's outline and centre point are sent to our servers, which look up information about that location from these providers:</p>
+        <ul class="policy-list">
+          <li><strong>Google Earth Engine</strong> — water, land cover, and urban growth</li>
+          <li><strong>Copernicus Data Space Ecosystem</strong> — satellite images for crop health</li>
+          <li><strong>NASA POWER</strong> — climate</li>
+          <li><strong>ISRIC SoilGrids</strong> — soil</li>
+          <li><strong>OpenAQ</strong> and <strong>USGS</strong> — air quality and earthquakes</li>
+          <li><strong>Open-Elevation</strong> — elevation</li>
+          <li><strong>OpenStreetMap services</strong> (Nominatim, Overpass, OSRM) — the nearest place name, nearby roads and facilities, and travel routes</li>
+          <li><strong>Anthropic</strong> (Claude, an AI model) — writes the regional sections of the report. It receives the nearest place name, the plot's centre rounded to about 100 metres, and the plot's area</li>
+        </ul>
+        <p>To avoid repeating these lookups, our servers keep the results in a shared cache organised by approximate location, without your user ID. If you're signed in, a copy of your report is also saved to your account so you can reopen it on another device.</p>
+        <h3>Other online features</h3>
+        <ul class="policy-list">
+          <li><strong>Place search</strong> — what you type goes to Google's geocoding and place services</li>
+          <li><strong>Elevation profile</strong> — the line's points go to our servers, which read public Copernicus elevation data</li>
+          <li><strong>Offline map downloads</strong> — the area you pick goes to the map's provider, such as Esri, or to our servers for Esri imagery</li>
+          <li><strong>Map layers and property lines</strong> — while a layer is on, your phone asks its provider for the map area on screen. Providers include government mapping and land registry services in the United States and Europe (for example USGS, the US Bureau of Land Management, IGN in France, PDOK in the Netherlands, and Catastro in Spain), plus any custom layer you add yourself</li>
+          <li><strong>Currency rates</strong> — the price calculator gets exchange rates from open.er-api.com; no location is sent</li>
+        </ul>
+        <p>Each of these providers handles requests under its own privacy terms.</p>
       </div>
 
       <div class="section" id="analytics">
-        <div class="section-header"><div class="section-num mono">04</div><h2>Analytics & Crash Reporting</h2></div>
+        <div class="section-header"><div class="section-num mono">05</div><h2>Analytics & Crash Reporting</h2></div>
         <p>GeoTrace uses three Firebase products to understand how the app is used and to fix problems:</p>
         <h3>Firebase Analytics</h3>
         <p>Collects app interaction events (screens viewed, features used, session length) and general device information (device model, OS version, country/region derived from IP). Used to understand feature usage and improve the app.</p>
         <h3>Firebase Crashlytics</h3>
-        <p>When the app crashes or encounters an error, a crash report is sent to Google containing stack traces, device state at the time of the crash, and device model/OS info. This does not include your measurement data.</p>
+        <p>When the app crashes or encounters an error, a crash report is sent to Google containing stack traces, device state at the time of the crash, and device model/OS info. We don't deliberately include your saved measurements in these reports.</p>
         <h3>Firebase Performance Monitoring</h3>
         <p>Collects technical metrics such as app startup time, network request latency, and screen rendering performance.</p>
+        <h3>Our own event log and error reports</h3>
+        <p>We also keep our own log of app events, and of warnings and errors the app records, in our Google Firestore database. Entries are linked to your user ID, and event entries to your email if you're signed in. We use them to see which features work and to fix problems. Access is restricted to the developer.</p>
         <h3>Internal account & install records</h3>
-        <p>Separately from Firebase Analytics above, we maintain our own record for each install — device model, OS version, app version, subscription tier, and install/last-active dates — used to monitor app health and provide support. If you sign in, this record also includes your email and display name, and your push notification token if notifications are enabled, so we can identify and assist a specific account. This is stored in our Google Firestore database, not a Google analytics product, and access is restricted to the developer.</p>
+        <p>Separately from Firebase Analytics above, we maintain our own record for each install — device ID (Android ID), automatic anonymous user ID, device brand and model, OS version, app version, language, country, subscription tier, install source, number of measurements, and install/last-active dates — used to monitor app health, target notifications, and provide support. If you sign in, this record also includes your email and display name, and your push notification token if notifications are enabled, so we can identify and assist a specific account. This is stored in our Google Firestore database, not a Google analytics product, and access is restricted to the developer.</p>
         <p>All of the above are provided by, or built on, Google Firebase, and governed additionally by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--field-bright)">Google's Privacy Policy</a>.</p>
       </div>
 
       <div class="section" id="ads">
-        <div class="section-header"><div class="section-num mono">05</div><h2>Advertising</h2></div>
+        <div class="section-header"><div class="section-num mono">06</div><h2>Advertising</h2></div>
         <p>GeoTrace displays ads through <strong>Google AdMob</strong>. AdMob may collect your advertising ID, general device information, approximate location, and ad interaction data (impressions, clicks) to select and measure ads, and may share this with its network of ad partners.</p>
         <ul class="policy-list">
+          <li>Where the law requires it, the app asks for your ad consent, using Google's consent tool. From the next app version, you can change your choice at any time in <strong>Settings → Privacy choices</strong></li>
           <li>You can opt out of personalized advertising in your device's ad settings (Android Settings → Privacy → Ads → "Opt out of Ads Personalization")</li>
           <li>You can reset or delete your advertising ID at any time in device settings</li>
           <li>Ads are provided by third-party networks and are subject to their own privacy policies</li>
@@ -390,29 +427,34 @@
       </div>
 
       <div class="section" id="accounts">
-        <div class="section-header"><div class="section-num mono">06</div><h2>Accounts & Cloud Sync</h2></div>
-        <p>Creating an account is <strong>optional</strong>. If you choose to sign in (via Firebase Authentication with Google), we collect the email address and display name associated with your Google account.</p>
+        <div class="section-header"><div class="section-num mono">07</div><h2>Accounts & Cloud Sync</h2></div>
+        <p>Creating an account is <strong>optional</strong>. So that online features work, the app automatically creates an anonymous user ID on first launch, which isn't linked to your name or email. If you choose to sign in (via Firebase Authentication with Google), we collect the email address and display name associated with your Google account.</p>
         <p>Signing in by itself only stores your email/display name (for account identification and support) — it does not require or enable payment. If you additionally subscribe to or purchase <strong>GeoTrace Pro</strong>, your projects and measurements, including GPS coordinates, are synced to Google Firestore so they're available across your signed-in devices. Deleting a project or measurement while signed in and Pro removes it from Firestore too, not just your device.</p>
-        <p>If you never sign in, no account data is created and your data remains local to the device, as described in the sections above.</p>
+        <p>If you never sign in, only the anonymous ID and the install record described under Analytics are created. Your saved measurements stay on the device, apart from what online features send when you use them.</p>
       </div>
 
       <div class="section" id="purchases">
-        <div class="section-header"><div class="section-num mono">07</div><h2>In-App Purchases</h2></div>
+        <div class="section-header"><div class="section-num mono">08</div><h2>In-App Purchases</h2></div>
         <p>GeoTrace uses <strong>Google Play Billing</strong> for any in-app purchases (e.g. premium features, if offered). Purchases are processed entirely by Google Play; GeoTrace receives a purchase confirmation and entitlement status but does not receive or store your payment card details. Purchase history is retained by Google Play under your Google account.</p>
       </div>
 
       <div class="section" id="camera">
-        <div class="section-header"><div class="section-num mono">08</div><h2>Camera & Photos</h2></div>
-        <p>GeoTrace requests camera access so you can attach photos to measurement projects (e.g. site photos, reference images). Photos are stored locally on your device and included in cloud sync only if you've signed in and cloud sync is enabled. GeoTrace does not access your camera or photo library in the background, and does not use photos for any purpose beyond the project you attach them to.</p>
+        <div class="section-header"><div class="section-num mono">09</div><h2>Camera & Photos</h2></div>
+        <p>GeoTrace requests camera access so you can attach photos to plots, scan QR codes, and use the AR tools. Photos are stored locally on your device. They are uploaded to Google Cloud Storage only if the plot is included in cloud sync or a shared project, where the project's other members can see them. GeoTrace does not access your camera or photo library in the background, and does not use photos for any purpose beyond the plot you attach them to.</p>
+      </div>
+
+      <div class="section" id="shared">
+        <div class="section-header"><div class="section-num mono">10</div><h2>Shared Projects & Friends</h2></div>
+        <p>If you share a project or add friends, the people you share with can see the project's plots, including their coordinates, photos, and points, along with your display name and email. A shared project is stored in our Google Firestore database. If you invite someone by email, we store that address and may send them an invitation email. You can leave a shared project or remove a friend at any time.</p>
       </div>
 
       <div class="section" id="notifications">
-        <div class="section-header"><div class="section-num mono">09</div><h2>Push Notifications</h2></div>
+        <div class="section-header"><div class="section-num mono">11</div><h2>Push Notifications</h2></div>
         <p>GeoTrace uses Firebase Cloud Messaging to send optional push notifications (e.g. app updates, reminders). This requires a device-specific messaging token to be registered with Firebase and stored against your device/account record. You can disable notifications at any time in your device's app notification settings.</p>
       </div>
 
       <div class="section" id="permissions">
-        <div class="section-header"><div class="section-num mono">10</div><h2>App Permissions</h2></div>
+        <div class="section-header"><div class="section-num mono">12</div><h2>App Permissions</h2></div>
         <p>GeoTrace requests the following Android permissions:</p>
         <div class="table-scroll">
         <table class="ledger">
@@ -420,7 +462,10 @@
           <tbody>
             <tr><td data-label="Permission"><strong>ACCESS_FINE_LOCATION</strong></td><td data-label="Purpose">GPS-based land measurement</td><td data-label="Required?">Yes — core feature</td></tr>
             <tr><td data-label="Permission"><strong>ACCESS_COARSE_LOCATION</strong></td><td data-label="Purpose">Network-based position fallback</td><td data-label="Required?">Optional</td></tr>
-            <tr><td data-label="Permission"><strong>CAMERA</strong></td><td data-label="Purpose">Attach photos to measurement projects</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>CAMERA</strong></td><td data-label="Purpose">Plot photos, QR scanning, and AR tools</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>FOREGROUND_SERVICE, FOREGROUND_SERVICE_LOCATION</strong></td><td data-label="Purpose">Keep recording a walk with the screen off, with a notification</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>BLUETOOTH, BLUETOOTH_ADMIN, BLUETOOTH_CONNECT</strong></td><td data-label="Purpose">Connect an external GPS receiver</td><td data-label="Required?">Optional</td></tr>
+            <tr><td data-label="Permission"><strong>VIBRATE</strong></td><td data-label="Purpose">Haptic feedback and walk cues</td><td data-label="Required?">Optional</td></tr>
             <tr><td data-label="Permission"><strong>POST_NOTIFICATIONS</strong></td><td data-label="Purpose">Show app notifications (Android 13+)</td><td data-label="Required?">Optional</td></tr>
             <tr><td data-label="Permission"><strong>ACCESS_NETWORK_STATE</strong></td><td data-label="Purpose">Detect connectivity for online map tiles and sync</td><td data-label="Required?">Optional</td></tr>
             <tr><td data-label="Permission"><strong>READ_EXTERNAL_STORAGE</strong> <span class="mono" style="font-size:11px;opacity:.75">(Android ≤12)</span></td><td data-label="Purpose">Import geo files (KML, GPX, CSV, etc.)</td><td data-label="Required?">Optional</td></tr>
@@ -433,25 +478,33 @@
       </div>
 
       <div class="section" id="storage">
-        <div class="section-header"><div class="section-num mono">11</div><h2>Data Storage & Retention</h2></div>
+        <div class="section-header"><div class="section-num mono">13</div><h2>Data Storage & Retention</h2></div>
         <ul class="policy-list">
-          <li>Measurements, project names, GPS points, and exported files are stored locally on your device by default</li>
-          <li>If you sign in and subscribe to or purchase Pro, project data — including GPS coordinates — is additionally stored in Google Firestore and retained until you delete it or request account deletion</li>
+          <li>Measurements, project names, GPS points, Land Reports, and exported files are stored locally on your device</li>
+          <li>Synced and shared project data, including GPS coordinates and photos, and Land Reports saved to your account are stored in Google Firestore and Cloud Storage until you delete them or request account deletion</li>
+          <li>Our own event log and error reports are kept until we delete them</li>
+          <li>Land Report lookup results are kept in the shared cache, by approximate location, for up to about a year or longer for data that rarely changes</li>
           <li>If you sign in (with or without Pro), your email, display name, and device/install record are retained in Google Firestore until you request deletion</li>
           <li>Analytics and crash data are retained by Google according to Firebase's standard retention periods (typically up to 14 months for Analytics)</li>
-          <li>Deleting the app removes locally stored data from your device; it does not delete data already synced to your account — contact us to remove that (see Your Rights & Choices below)</li>
+          <li>Deleting the app removes locally stored data from your device; it does not delete data already synced to your account — ask us to remove that (see Your Rights & Choices below)</li>
+          <li>Your data may be processed in countries other than your own, including the United States, where Google and other providers operate</li>
           <li>We recommend enabling device-level encryption for additional local security</li>
         </ul>
       </div>
 
       <div class="section" id="third-party">
-        <div class="section-header"><div class="section-num mono">12</div><h2>Third-Party Services</h2></div>
-        <p>GeoTrace integrates the following third-party services, all operated by Google:</p>
+        <div class="section-header"><div class="section-num mono">14</div><h2>Third-Party Services</h2></div>
+        <p>The app integrates the following services operated by Google. The other providers we use are listed under <a href="#land-report" style="color:var(--field-bright)">Land Reports & Online Features</a>.</p>
         <ul class="policy-list plain">
           <li><strong>Google Maps / Places SDK</strong> — map tile imagery and location search</li>
           <li><strong>Google Play Services</strong> — device location and core Android services</li>
-          <li><strong>Firebase Authentication</strong> — optional sign-in</li>
-          <li><strong>Firebase Firestore</strong> — cloud sync/backup of project data for Pro subscribers, our own per-account/install records, and app feedback</li>
+          <li><strong>Firebase Authentication</strong> — anonymous ID and optional sign-in</li>
+          <li><strong>Firebase Firestore</strong> — cloud sync of project data for Pro subscribers, shared projects, saved Land Reports, our own account and install records, event log, error reports, and app feedback</li>
+          <li><strong>Firebase Cloud Storage</strong> — plot photos in synced or shared projects</li>
+          <li><strong>Cloud Functions for Firebase</strong> — Land Reports, elevation profiles, invitations, and notifications</li>
+          <li><strong>Firebase App Check and Play Integrity</strong> — confirm requests come from the genuine app</li>
+          <li><strong>Firebase Remote Config</strong> — turn features on or off remotely</li>
+          <li><strong>Google Earth Engine</strong> — Land Report analysis</li>
           <li><strong>Firebase Analytics</strong> — usage analytics</li>
           <li><strong>Firebase Crashlytics</strong> — crash reporting</li>
           <li><strong>Firebase Performance Monitoring</strong> — app performance metrics</li>
@@ -459,15 +512,16 @@
           <li><strong>Google AdMob</strong> — in-app advertising</li>
           <li><strong>Google Play Billing</strong> — in-app purchases</li>
         </ul>
-        <p>Each service operates under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--field-bright)">Google's Privacy Policy</a> in addition to this one.</p>
+        <p>These services operate under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--field-bright)">Google's Privacy Policy</a> in addition to this one.</p>
       </div>
 
       <div class="section" id="rights">
-        <div class="section-header"><div class="section-num mono">13</div><h2>Your Rights & Choices</h2></div>
-        <p>Depending on your location, you may have rights to access, correct, export, or delete your data (e.g. under GDPR or CCPA/CPRA). Since most data lives on your device, you can exercise most of these rights directly:</p>
+        <div class="section-header"><div class="section-num mono">15</div><h2>Your Rights & Choices</h2></div>
+        <p>Depending on your location, you may have rights to access, correct, export, or delete your data (e.g. under GDPR or CCPA/CPRA). You can exercise many of these rights directly:</p>
         <ul class="policy-list">
           <li>Delete locally stored data by clearing app storage or uninstalling the app</li>
-          <li>Request deletion of your account and any synced data by contacting us — there is currently no self-serve in-app deletion option</li>
+          <li>Request deletion of your account and any synced data through our <a href="https://khadkarabindra.github.io/developer-site/delete-account/" target="_blank" rel="noopener" style="color:var(--field-bright)">account deletion page</a>, or by contacting us</li>
+          <li>From the next app version, change your ad consent in Settings → Privacy choices, where this applies to you</li>
           <li>Opt out of ad personalization in your device's ad settings</li>
           <li>Disable notifications in your device's app settings</li>
           <li>Revoke location, camera, or storage permissions at any time in device settings</li>
@@ -475,17 +529,17 @@
       </div>
 
       <div class="section" id="children">
-        <div class="section-header"><div class="section-num mono">14</div><h2>Children's Privacy</h2></div>
+        <div class="section-header"><div class="section-num mono">16</div><h2>Children's Privacy</h2></div>
         <p>GeoTrace is not directed at children under 13, and we do not knowingly collect personal information from children under 13. Because the app includes advertising (Google AdMob) and analytics, it is not intended for use by children. If you believe a child has used the app and provided personal information, please contact us so we can address it.</p>
       </div>
 
       <div class="section" id="changes">
-        <div class="section-header"><div class="section-num mono">15</div><h2>Changes to This Policy</h2></div>
+        <div class="section-header"><div class="section-num mono">17</div><h2>Changes to This Policy</h2></div>
         <p>We may update this Privacy Policy from time to time, particularly as app features change. Any changes will be posted on this page with an updated effective date. Significant changes will be communicated through an in-app notification. Continued use of the app after changes constitutes your acceptance of the updated policy.</p>
       </div>
 
       <div class="section" id="contact">
-        <div class="section-header"><div class="section-num mono">16</div><h2>Contact Us</h2></div>
+        <div class="section-header"><div class="section-num mono">18</div><h2>Contact Us</h2></div>
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the app's data practices, please reach out:</p>
         <div class="contact-card">
           <div class="contact-icon">📧</div>
@@ -502,8 +556,7 @@
 
 <footer>
   <div class="wrap">© 2026 <span class="field">GeoTrace</span> · Land Measurement App · All rights reserved</div>
-  <div class="wrap" style="margin-top:6px;">This policy is effective as of August 7, 2026</div>
-  <div class="wrap legal-note">This page is a factual description of GeoTrace's current data practices based on its integrated SDKs. It is not a substitute for legal advice — have it reviewed by counsel before publishing, particularly to confirm GDPR/CCPA obligations and Google Play Data Safety alignment for your specific configuration.</div>
+  <div class="wrap" style="margin-top:6px;">This policy is effective as of November 3, 2026</div>
 </footer>
 
 <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
